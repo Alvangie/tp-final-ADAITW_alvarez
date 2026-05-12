@@ -129,12 +129,12 @@ blockquote footer {
     font-weight: bold;
 }
 
-/* 7. FORMULARIO Y FOOTER (Igual al anterior que te gustó) */
 #contacto {
     display: flex;
     flex-direction: column;
     align-items: center; /* Centra el bloque del formulario */
 }
+/*formulario centrado */
 
 #contacto h2 { width: 100%; text-align: center; }
 
