@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+    <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/png">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Data Analysis & QA Specialist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="Portfolio profesional de Análisis de Datos, IA y QA Testing.">
+    <link rel="icon" href="assets/img/favicon.png" type="image/png">
+    <meta property="og:title" content="Portfolio Tech | Especialista en Datos e IA">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio">
+            <h1>Tech <span style="color: var(--accent);">Data & QA</span></h1>
+            <p>Especialista en Análisis de Datos, Big Data y QA Testing. Enfocada en la optimización de procesos mediante Inteligencia Artificial y el aseguramiento de la calidad del software.</p>
+        </section>
+
+<section id="habilidades">
+    <h2>Habilidades Técnicas</h2> <div class="skills-grid">
+        <article>
+            <i class="fa-solid fa-chart-line" style="color: var(--accent); font-size: 2rem;"></i>
+            <h3>Big Data & Analytics</h3>
+            <p>Procesamiento y extracción de insights estratégicos.</p>
+        </article>
+        <article>
+            <i class="fa-solid fa-bug-slash" style="color: var(--accent); font-size: 2rem;"></i>
+            <h3>QA Testing</h3>
+            <p>Aseguramiento de calidad y detección de fallos de software.</p>
+        </article>
+        <article>
+            <i class="fa-solid fa-microchip" style="color: var(--accent); font-size: 2rem;"></i>
+            <h3>IA & Machine Learning</h3>
+            <p>Implementación de soluciones inteligentes y automatización.</p>
+        </article>
+    </div>
+</section>
+        <blockquote cite="https://en.wikipedia.org/wiki/W._Edwards_Deming">
+            <p>"Sin datos, solo eres otra persona con una opinión."</p>
+            <footer>— W. Edwards Deming</footer>
+        </blockquote>
+
+        <section id="proyectos">
+            <h2>Proyectos Destacados</h2>
+            
+            <article>
+                <h3>Dashboard de Datos</h3>
+                <p>Visualización interactiva de métricas clave utilizando herramientas de análisis avanzado para Big Data.</p>
+            </article>
+
+            <article>
+                <h3>Framework de QA Testing</h3>
+                <p>Diseño de casos de prueba y protocolos de testing para aplicaciones de alto tráfico.</p>
+            </article>
+
+            <article>
+                <h3>Ciberseguridad & IA</h3>
+                <p>Desarrollo de estrategias de prevención de phishing y seguridad multi-factor (MFA) para plataformas digitales.</p>
+            </article>
+
+            <article>
+                <h3>Help Desk & Soporte IT</h3>
+                <p>Optimización de procesos de soporte técnico y resolución de incidencias en entornos corporativos.</p>
+            </article>
+        </section>
+<section id="contacto">
+    <h2>Contacto</h2>
+
+    <div id="status">
+        <i class="fa-solid fa-circle-check" style="color: var(--accent); font-size: 3rem; margin-bottom: 1rem; display: block;"></i>
+        <p style="font-weight: bold;">¡Tus datos fueron perfectamente enviados!</p>
+    </div>
+
+    <form id="my-form" action="https://formspree.io/f/xrejjppn" method="POST">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="name" placeholder="Tu nombre" required>
+        
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+        
+        <label for="mensaje">Mensaje / Consulta técnica (Minimo 100 caracteres)</label>
+        <textarea id="mensaje" name="message" rows="5" minlength="100" placeholder="¿En qué puedo ayudarte?" required></textarea>
+        
+        <button type="submit" id="my-form-button">Enviar Mensaje</button>
+    </form>
+
+    <article class="mfa-card">
+        <i class="fa-solid fa-shield-halved"></i>
+        <div class="mfa-text">
+            <h3>Seguridad & MFA</h3>
+            <p>Implementación de protocolos de autenticación de doble factor y prevención de phishing.</p>
+        </div>
+    </article>
+</section>
+    </main>
+<footer>
+    <p>© 2026 | Desarrollado por Angela Alvarez para Ada ITW[cite: 15].</p>
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/alvarezangelalucero" target="_blank">LinkedIn</a> | 
+        <a href="https://github.com/Alvangie" target="_blank">GitHub</a> 
+    </div>
+</footer>
+
+<script>
+  const form = document.getElementById("my-form");
+  const statusMessage = document.getElementById("status");
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    fetch(event.target.action, {
+      method: form.method,
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        statusMessage.style.display = "block";
+        form.style.display = "none";
+      } else {
+        alert("Ocurrió un error al enviar el formulario.");
+      }
+    }).catch(() => {
+      alert("Error de conexión.");
+    });
+  }
+
+  form.addEventListener("submit", handleSubmit);
+</script>
+
+</body>
+</html>
