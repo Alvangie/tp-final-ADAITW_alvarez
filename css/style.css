@@ -217,28 +217,44 @@ footer {
     color: var(--text-muted);
 }
 
+/* 9. RESPONSIVE - Versión Optimizada */
 @media (max-width: 768px) {
     header {
-        position: static; /* Esto hace que el menú no flote y deje de tapar el texto */
+        position: static; /* Evita que flote sobre el texto */
         padding: 1rem 0;
     }
 
     nav ul {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row; 
+        flex-wrap: wrap;     /* si no entra, bajan a la siguiente fila */
+        justify-content: center; /* centra los botones */
+        gap: 10px 20px;
+        padding: 0 15px;
+    }
+
+    nav ul li {
+        margin: 0; /* se quita el margen viejo que los separaba mucho */
+    }
+
+    nav ul li a {
+        font-size: 0.8rem;
+        text-transform: uppercase;
     }
 
     section {
-        padding: 40px 5% 20px; /* Ajustamos el espacio para que no haya tanto hueco negro */
+        padding: 40px 5% 20px;
+        text-align: center;  
     }
 
     h1 {
         font-size: 1.8rem;
-        text-align: center;
+        margin-top: 10px;
     }
-    
+
+    /* Ajuste para que la tarjeta de seguridad se vea bien en vertical */
     .mfa-card {
-        flex-direction: column; /* En celu, el escudo arriba y el texto abajo */
+        flex-direction: column;
         text-align: center;
+        gap: 10px;
     }
 }
